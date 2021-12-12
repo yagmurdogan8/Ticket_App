@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileProgrammingA2_3.MainPage">
+
+    <!--<Grid RowDefinitions="*, 2*, Auto">
+        <BoxView Grid.RowSpan="3">
+            <BoxView.Background>
+                <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Color="DarkGreen" Offset="0"></GradientStop>
+                        <GradientStop Color="DarkBlue" Offset="0"></GradientStop>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+    </Grid>-->
+
+    <StackLayout >
+
+        <Grid>
+            <Image Source="tck1.png" WidthRequest="200" HeightRequest="200" VerticalOptions="Center" HorizontalOptions="Center" 
+                   IsAnimationPlaying="True" Margin="0,10"></Image>
+        </Grid>
+        <Grid>
+            <Label Text = "Ticket &#10;Check" HorizontalOptions="Center" FontSize="25" FontAttributes="Italic" 
+                   TextColor="DarkBlue" FontFamily="Gill Sans"/>
+        </Grid>
+        <Grid>
+            <Entry IsPassword="True" PlaceholderColor='DarkGreen' HorizontalTextAlignment="Center" Placeholder = "User ID" Margin="70,0" 
+                   HorizontalOptions="FillAndExpand" FontFamily="Gill Sans" x:Name="userIDMain"/>
+           
+            <Image HorizontalOptions="End" Margin="20" Source="eye.png" WidthRequest="20" HeightRequest="20" x:Name="hidden1">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="EyeTapped" NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+        <Grid>
+            <Entry IsPassword="true" PlaceholderColor="DarkGreen" HorizontalTextAlignment="Center" Placeholder = "HES Code" Margin="70,0" 
+                   HorizontalOptions="FillAndExpand" FontFamily="Gill Sans" x:Name="HESMain"/>
+            
+            <Image HorizontalOptions="End" Margin="20" Source="eye.png" WidthRequest="20" HeightRequest="20" x:Name="hidden2">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="EyeTappedHES" NumberOfTapsRequired="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+        <Grid>
+            <Label Text="&#10;"/>
+        </Grid>
+        <Grid>
+            <Button BackgroundColor="White" BorderWidth="3" BorderColor="DarkBlue" FontAttributes="Bold" FontSize="18"
+                    CornerRadius="20" Text = "Check Ticket" HorizontalOptions="CenterAndExpand" TextColor="DarkGreen" 
+                    FontFamily="Gill Sans" Clicked="Button_Clicked"/>
+        </Grid>
+
+        <Grid>
+            <Label IsVisible="false" Text="No Ticket Found!" x:Name="noTck"
+                   HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="DarkBlue">
+                
+            </Label> 
+        </Grid>
+
+    </StackLayout>
+</ContentPage>
